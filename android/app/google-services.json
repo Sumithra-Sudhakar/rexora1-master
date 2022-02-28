@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "930292025721",
+    "project_id": "rexdate-7a004",
+    "storage_bucket": "rexdate-7a004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930292025721:android:fb1bb7b0f97af941a587a8",
+        "android_client_info": {
+          "package_name": "com.example.rexora1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930292025721-cmsk5e7a2588ql577gogmfn7711bh0lt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rexora1",
+            "certificate_hash": "59689bd84905629835193475c8f73ba9fffd17da"
+          }
+        },
+        {
+          "client_id": "930292025721-g7q3ufqkupft4dfu23rssaavphd20von.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUqTkVUTZdl0XFzCmCwVCwRcqjKk83aYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930292025721-g7q3ufqkupft4dfu23rssaavphd20von.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
