@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/otp.dart';
-
 import 'birthday.dart';
 
 enum MobileVerificationState { SHOW_NUMBER, SHOW_OTP }
@@ -23,6 +22,7 @@ class _PhoneState extends State<Phone> {
 
   late String verificationId;
   bool showloading = false;
+  bool isLoading = false;
   Widget getPhone(context) {
     return Container(
       decoration: BoxDecoration(
@@ -81,34 +81,7 @@ class _PhoneState extends State<Phone> {
                           color: Color(0xff171B72), fontSize: 16),
                     ),
                     onPressed: () async {
-                      setState(() {
-                        showloading = true;
-                      });
-                      await _auth.verifyPhoneNumber(
-                          phoneNumber: phoneController.text,
-                          verificationCompleted: (phoneAuthCredential) async {
-                            print("verifiying object");
-                            setState(() {
-                              showloading = false;
-                            });
-                            //signInWithPhoneAuthCredential(phoneAuthCredential);
-                          },
-                          verificationFailed: (verificationFailed) async {
-                           print(phoneController.text);
-                            setState(() {
-                              showloading = false;
-                            });
-                            _scaffoldKey.currentState?.showSnackBar(SnackBar(
-                                content: Text("oops! cannot be verified")));
-                          },
-                          codeSent: (verificationId, resendingToken) async {
-                            setState(() {
-                              showloading = false;
-                              currentState = MobileVerificationState.SHOW_OTP;
-                              this.verificationId = verificationId;
-                            });
-                          },
-                          codeAutoRetrievalTimeout: (verificationId) async {});
+                      await phoneSignIn(phoneNumber: '+919643046366');
                     },
                     style: ElevatedButton.styleFrom(
                         elevation: 2,
@@ -247,27 +220,108 @@ class _PhoneState extends State<Phone> {
         ));
   }
 
-  void signInWithPhoneAuthCredential(
+  Future<void> signInWithPhoneAuthCredential(
       PhoneAuthCredential phoneAuthCredential) async {
     setState(() {
       showloading = true;
     });
     try {
+      print(1);
       final UserCredential authCredential =
           await _auth.signInWithCredential(phoneAuthCredential);
       setState(() {
         showloading = false;
       });
+
+      print(2);
       if (authCredential.user != null) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => const Birthday()));
+
+        print(3);
       }
+
+      print(4);
     } on FirebaseAuthException catch (e) {
+      print(e.message.toString());
       setState(() {
         showloading = false;
       });
       _scaffoldKey.currentState
           ?.showSnackBar(SnackBar(content: Text("execption caught sorry ")));
     }
+  }
+
+  Future<void> phoneSignIn({required String phoneNumber}) async {
+    await _auth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: _onVerificationCompleted,
+        verificationFailed: _onVerificationFailed,
+        codeSent: _onCodeSent,
+        codeAutoRetrievalTimeout: _onCodeTimeout);
+  }
+
+  _onVerificationCompleted(PhoneAuthCredential authCredential) async {
+    print("verification completed ${authCredential.smsCode}");
+    User? user = FirebaseAuth.instance.currentUser;
+
+    ///setState(() {
+    /// this.otpCode.text = authCredential.smsCode!;
+    ///});
+    print(authCredential.smsCode);
+    if (authCredential.smsCode != null) {
+      try {
+        UserCredential credential =
+            await user!.linkWithCredential(authCredential);
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'provider-already-linked') {
+          await _auth.signInWithCredential(authCredential);
+        }
+      }
+      setState(() {
+        isLoading = false;
+      });
+      Navigator.pushNamedAndRemoveUntil(
+          context, Navigator.defaultRouteName, (route) => false);
+    }
+  }
+
+  _onVerificationFailed(FirebaseAuthException exception) {
+    if (exception.code == 'invalid-phone-number') {
+      showMessage("The phone number entered is invalid!");
+    }
+  }
+
+  _onCodeSent(String verificationId, int? forceResendingToken) {
+    this.verificationId = verificationId;
+    print(forceResendingToken);
+    print("code sent");
+  }
+
+  _onCodeTimeout(String timeout) {
+    return null;
+  }
+
+  void showMessage(String errorMessage) {
+    showDialog(
+        context: context,
+        builder: (BuildContext builderContext) {
+          return AlertDialog(
+            title: Text("Error"),
+            content: Text(errorMessage),
+            actions: [
+              TextButton(
+                child: Text("Ok"),
+                onPressed: () async {
+                  Navigator.of(builderContext).pop();
+                },
+              )
+            ],
+          );
+        }).then((value) {
+      setState(() {
+        isLoading = false;
+      });
+    });
   }
 }
