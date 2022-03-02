@@ -6,6 +6,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:rexora1/screens/birthday.dart';
 import 'package:rexora1/screens/signin.dart';
 
+import '../utils/pageroute.dart';
 import 'home.dart';
 
 class OTP extends StatefulWidget {
@@ -146,10 +147,11 @@ class _OTPState extends State<OTP> {
                       color: Color(0xff171B72), fontSize: 16),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Birthday()));
+                  Navigator.of(context).push(
+                      CustomPageRoute (
+                          child: Birthday())
+
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     elevation: 2,

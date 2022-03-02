@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/terms.dart';
 
+import '../utils/pageroute.dart';
 import 'Gender.dart';
 
 class Gift extends StatefulWidget {
@@ -70,7 +71,11 @@ class _GiftState extends State<Gift> {
         leading: Radio(
           value: options.Yes,
           groupValue: _opt,
-          onChanged: null,
+          onChanged: (option){
+            setState(() {
+              _opt = options.Yes;
+            });
+          },
         ),
       ),
       ListTile(
@@ -81,7 +86,11 @@ class _GiftState extends State<Gift> {
         leading: Radio(
           value: options.No,
           groupValue: _opt,
-          onChanged:  null
+          onChanged: (option){
+            setState(() {
+              _opt = options.No;
+            });
+          },
 
         ),
       ),
@@ -89,8 +98,9 @@ class _GiftState extends State<Gift> {
         padding: const EdgeInsets.all(18.0),
         child: RaisedButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const Terms()));
+            Navigator.of(context).push(
+                CustomPageRoute (
+                    child: Terms()));
           },
 
 

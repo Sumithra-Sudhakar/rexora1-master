@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/gift_policy.dart';
+import 'package:rexora1/utils/colors.dart' as colors;
+
+import '../utils/pageroute.dart';
 
 class Gender extends StatefulWidget {
   const Gender({Key? key}) : super(key: key);
@@ -68,6 +71,8 @@ class _GenderState extends State<Gender> {
                     ),
                     child:  DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
+                        dropdownColor: colors.textBoxColor,
+
                         value: value,
                         iconSize: 36,
                         isExpanded: true,
@@ -84,8 +89,11 @@ class _GenderState extends State<Gender> {
                   padding: const EdgeInsets.all(28.0),
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Gift()));
+                      Navigator.of(context).push(
+                          CustomPageRoute (
+                              child: Gift())
+
+                      );
                     },
 
 

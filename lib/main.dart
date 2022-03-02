@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rexora1/screens/home.dart';
+import 'package:rexora1/screens/no_internet.dart';
 import 'package:rexora1/utils/google_sign_in.dart';
 
 Future main() async {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Dating App',
-        theme: ThemeData(primarySwatch: Colors.deepOrange),
+        theme: ThemeData(primarySwatch: Colors.deepPurple),
         home: Home(),
       );
 }

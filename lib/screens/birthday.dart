@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/pageroute.dart';
 import 'Gender.dart';
 
 class Birthday extends StatefulWidget {
@@ -95,8 +96,11 @@ class _BirthdayState extends State<Birthday> {
                  padding: const EdgeInsets.all(18.0),
                  child: RaisedButton(
                    onPressed: () {
-    Navigator.push(context,
-    MaterialPageRoute(builder: (context) => const Gender()));
+                     Navigator.of(context).push(
+                         CustomPageRoute (
+                             child: Gender())
+
+                     );
     },
 
 

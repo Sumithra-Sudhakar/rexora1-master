@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/hurray.dart';
+import 'package:rexora1/screens/signup.dart';
 
  class Terms extends StatefulWidget {
    const Terms({Key? key}) : super(key: key);
@@ -100,7 +101,10 @@ import 'package:rexora1/screens/hurray.dart';
                  fontSize: 16
 
              ),),
-             onPressed: (){},
+             onPressed: (){
+               Navigator.push(context,
+                   MaterialPageRoute(builder: (context) => const SignUp()));
+             },
 
              style: ElevatedButton.styleFrom(
                  elevation: 2,

@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:930292025721:android:fb1bb7b0f97af941a587a8",
+        "mobilesdk_app_id": "1:930292025721:android:23aae78a2448bdeea587a8",
         "android_client_info": {
           "package_name": "com.example.rexora1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "930292025721-cmsk5e7a2588ql577gogmfn7711bh0lt.apps.googleusercontent.com",
+          "client_id": "930292025721-rmk3b4lud1hrnfdq52j5nii7224ud2uf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.rexora1",
-            "certificate_hash": "59689bd84905629835193475c8f73ba9fffd17da"
+            "certificate_hash": "4b5a0fca0307a695580d380fe42d91031d544a2c"
           }
         },
         {

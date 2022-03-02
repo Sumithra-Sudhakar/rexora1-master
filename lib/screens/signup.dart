@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:rexora1/screens/no_internet.dart';
 import 'package:rexora1/screens/phone.dart';
 import 'package:rexora1/screens/signin.dart';
 import 'package:rexora1/utils/google_signup_button_widget.dart';
 
-class SignUp extends StatelessWidget {
+import '../utils/pageroute.dart';
+
+class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
+  @override
+  _SignUpState createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,10 +76,11 @@ class SignUp extends StatelessWidget {
                               color: Color(0xff171B72), fontSize: 16),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Phone()));
+                          Navigator.of(context).push(
+                            CustomPageRoute (
+                              child: Phone())
+
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                             elevation: 2,
@@ -81,26 +90,37 @@ class SignUp extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20.0))),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-                      child: ElevatedButton.icon(
-                        icon: Icon(
-                          Icons.facebook,
-                          size: 24,
-                          color: Color(0xff171B72),
+                    AnimatedPositioned(
+                      duration: const Duration(seconds: 2),
+
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+                        child: ElevatedButton.icon(
+                          icon: Icon(
+                            Icons.facebook,
+                            size: 24,
+                            color: Color(0xff171B72),
+                          ),
+                          label: Text(
+                            "Sign Up with Facebook",
+                            style: GoogleFonts.montserrat(
+                                color: Color(0xff171B72), fontSize: 16),
+                          ),
+                          onPressed: () {
+
+                            Navigator.of(context).push(
+                                CustomPageRoute (
+                                    child: Internet())
+
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                              elevation: 2,
+                              padding: EdgeInsets.all(10.0),
+                              primary: Colors.white,
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0))),
                         ),
-                        label: Text(
-                          "Sign Up with Facebook",
-                          style: GoogleFonts.montserrat(
-                              color: Color(0xff171B72), fontSize: 16),
-                        ),
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            elevation: 2,
-                            padding: EdgeInsets.all(10.0),
-                            primary: Colors.white,
-                            shape: new RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0))),
                       ),
                     ),
                     Padding(
@@ -110,10 +130,11 @@ class SignUp extends StatelessWidget {
                       padding: EdgeInsets.all(20.0),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignIn()));
+                          Navigator.of(context).push(
+                              CustomPageRoute (
+                                  child: SignIn())
+
+                          );
                         },
                         child: Text(
                           "Already have an account? Sign in ",
@@ -132,3 +153,4 @@ class SignUp extends StatelessWidget {
     );
   }
 }
+

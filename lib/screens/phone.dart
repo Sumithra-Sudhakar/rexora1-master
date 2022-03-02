@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/otp.dart';
+import '../utils/pageroute.dart';
 import 'birthday.dart';
 
 enum MobileVerificationState { SHOW_NUMBER, SHOW_OTP }
@@ -80,8 +81,12 @@ class _PhoneState extends State<Phone> {
                       style: GoogleFonts.montserrat(
                           color: Color(0xff171B72), fontSize: 16),
                     ),
-                    onPressed: () async {
-                      await phoneSignIn(phoneNumber: '+919643046366');
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          CustomPageRoute (
+                              child: OTP(phoneNumber: phoneController.text,password: "1235",))
+
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                         elevation: 2,
