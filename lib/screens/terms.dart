@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/hurray.dart';
 import 'package:rexora1/screens/signup.dart';
-
+import 'package:rexora1/utils/colors.dart' as colors;
  class Terms extends StatefulWidget {
    const Terms({Key? key}) : super(key: key);
 
@@ -15,19 +15,22 @@ import 'package:rexora1/screens/signup.dart';
    Widget build(BuildContext context) {
      return Scaffold(
        appBar: AppBar(
-         backgroundColor:  Color(0xFF4A5BB6),
+         backgroundColor:  colors.background,
+         elevation: 0,
+
        ),
-       body: Container(
-       decoration: BoxDecoration(
-     gradient: LinearGradient(
-     begin: Alignment.topLeft,
-     end: Alignment.bottomRight,
-     colors: [
-     Color(0xFF4A5BB6),
-     Color(0xFF18246D)
-     ]
-     )
-     ),
+       backgroundColor: colors.background,
+     body: Container(
+     //   decoration: BoxDecoration(
+     // gradient: LinearGradient(
+     // begin: Alignment.topLeft,
+     // end: Alignment.bottomRight,
+     // colors: [
+     // Color(0xFF4A5BB6),
+     // Color(0xFF18246D)
+     // ]
+     // )
+     // ),
        child:  Column(
          mainAxisAlignment: MainAxisAlignment.center,
 
@@ -71,9 +74,9 @@ import 'package:rexora1/screens/signup.dart';
          children: [
            ElevatedButton.icon(
 
-             icon: Icon(Icons.thumb_up_alt_sharp, size: 24,color: Color(0xff171B72),),
+             icon: Icon(Icons.thumb_up_alt_sharp, size: 24,color: colors.buttonText,),
              label: Text("Agree", style: GoogleFonts.montserrat(
-                 color: Color(0xff171B72),
+                 color: colors.buttonText,
                  fontSize: 16
 
              ),),
@@ -85,7 +88,7 @@ import 'package:rexora1/screens/signup.dart';
              style: ElevatedButton.styleFrom(
                  elevation: 2,
                  padding: EdgeInsets.all( 10.0),
-                 primary: Colors.white,
+                 primary: colors.buttonColor,
                  shape: new RoundedRectangleBorder(
                      borderRadius: BorderRadius.circular(2.0)
                  )
@@ -95,9 +98,9 @@ import 'package:rexora1/screens/signup.dart';
 
            ElevatedButton.icon(
 
-             icon: Icon(Icons.thumb_down_alt_sharp, size: 24,color: Color(0xff171B72),),
+             icon: Icon(Icons.thumb_down_alt_sharp, size: 24,color: colors.buttonText,),
              label: Text("Disgree", style: GoogleFonts.montserrat(
-                 color: Color(0xff171B72),
+                 color: colors.buttonText,
                  fontSize: 16
 
              ),),
@@ -109,7 +112,7 @@ import 'package:rexora1/screens/signup.dart';
              style: ElevatedButton.styleFrom(
                  elevation: 2,
                  padding: EdgeInsets.all( 10.0),
-                 primary: Colors.white,
+                 primary: colors.buttonColor,
                  shape: new RoundedRectangleBorder(
                      borderRadius: BorderRadius.circular(2.0)
                  )

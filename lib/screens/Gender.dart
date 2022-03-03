@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/gift_policy.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
+
 
 import '../utils/pageroute.dart';
 
@@ -19,19 +21,21 @@ class _GenderState extends State<Gender> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor:    Color(0xFF4A5BB6),
+         backgroundColor: colors.background,
+          elevation: 0,
     ),
+    backgroundColor: colors.background,
     body: Container(
-    decoration: BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-    Color(0xFF4A5BB6),
-    Color(0xFF18246D)
-    ]
-    )
-    ),
+    // decoration: BoxDecoration(
+    // gradient: LinearGradient(
+    // begin: Alignment.topLeft,
+    // end: Alignment.bottomRight,
+    // colors: [
+    // Color(0xFF4A5BB6),
+    // Color(0xFF18246D)
+    // ]
+    // )
+    // ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,9 +105,12 @@ class _GenderState extends State<Gender> {
                     child: Text(
                       'Continue',
                       style:
-                      TextStyle(color: Color(0xFF18246D), fontWeight: FontWeight.bold),
+                      TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
                     ),
-                    color: Colors.white,
+                    elevation: 10,
+                    padding: EdgeInsets.all(18.0),
+
+                    color: colors.buttonColor,
                   ),
                 ),
               ],

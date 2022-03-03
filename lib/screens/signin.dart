@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/signup.dart';
+import 'package:rexora1/utils/colors.dart' as colors;
+
+import '../utils/pageroute.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -9,12 +12,13 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colors.background,
       body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //         begin: Alignment.topLeft,
+          //         end: Alignment.bottomRight,
+          //         colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,7 +53,7 @@ class SignIn extends StatelessWidget {
                           decoration: InputDecoration(
 
                             filled: true,
-                            fillColor: Color(0xff424894),
+                            fillColor: colors.textBoxColor,
                             hintText: "Enter your phone number",
                             hintStyle: GoogleFonts.poppins(
                               color: Colors.white.withOpacity(0.7),
@@ -71,7 +75,7 @@ class SignIn extends StatelessWidget {
                           decoration: InputDecoration(
 
                               filled: true,
-                              fillColor: Color(0xff424894),
+                              fillColor: colors.textBoxColor,
                               hintText: "Enter your password",
                               hintStyle: GoogleFonts.poppins(
                                 color: Colors.white.withOpacity(0.7),
@@ -92,18 +96,18 @@ class SignIn extends StatelessWidget {
                         children: [
                           ElevatedButton.icon(
 
-                            icon: Icon(Icons.facebook, size: 24,color: Color(0xff171B72),),
+                            icon: Icon(Icons.facebook, size: 24,color: colors.buttonText,),
                             label: Text("Facebook", style: GoogleFonts.montserrat(
-                                color: Color(0xff171B72),
+                                color: colors.buttonText,
                                 fontSize: 16
 
                             ),),
                             onPressed: (){},
 
                             style: ElevatedButton.styleFrom(
-                                elevation: 2,
+                                elevation: 10,
                                 padding: EdgeInsets.all( 10.0),
-                                primary: Colors.white,
+                                primary: colors.buttonColor,
                                 shape: new RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(2.0)
                                 )
@@ -113,18 +117,18 @@ class SignIn extends StatelessWidget {
 
                           ElevatedButton.icon(
 
-                            icon: Icon(Icons.mail_outline, size: 24,color: Color(0xff171B72),),
+                            icon: Icon(Icons.mail_outline, size: 24,color: colors.buttonText,),
                             label: Text("Google", style: GoogleFonts.montserrat(
-                                color: Color(0xff171B72),
+                                color: colors.buttonText,
                                 fontSize: 16
 
                             ),),
                             onPressed: (){},
 
                             style: ElevatedButton.styleFrom(
-                                elevation: 2,
+                                elevation: 10,
                                 padding: EdgeInsets.all( 10.0),
-                                primary: Colors.white,
+                                primary: colors.buttonColor,
                                 shape: new RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(2.0)
                                 )
@@ -136,23 +140,23 @@ class SignIn extends StatelessWidget {
 
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+                  padding: const EdgeInsets.fromLTRB(20, 30, 20, 10),
                   child: ElevatedButton.icon(
 
-                    icon: Icon(Icons.login, size: 24,color: Color(0xffffffff),),
+                    icon: Icon(Icons.login, size: 24,color: colors.buttonText,),
                     label: Text("Sign in", style: GoogleFonts.montserrat(
-                        color: Color(0xffffffffff),
+                        color: colors.buttonText,
                         fontSize: 16
 
                     ),),
                     onPressed: (){},
 
                     style: ElevatedButton.styleFrom(
-                        elevation: 2,
+                        elevation: 10,
                         padding: EdgeInsets.all( 10.0),
-                        primary: Color(0xff424894),
+                        primary: colors.buttonColor,
                         shape: new RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(2.0)
+                            borderRadius: BorderRadius.circular(10.0)
                         )
                     ),
 
@@ -163,11 +167,15 @@ class SignIn extends StatelessWidget {
                     ],
                   )),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
                 child: TextButton(
+
                   onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const SignUp()));
+                    Navigator.of(context).push(
+                        CustomPageRoute (
+                            child: SignUp())
+
+                    );
                   },
                   child: Text("New Here? Sign up ", style: GoogleFonts.montserrat(
                     fontSize: 16,

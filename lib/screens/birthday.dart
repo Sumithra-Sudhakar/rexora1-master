@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:rexora1/utils/colors.dart' as colors;
 import '../utils/pageroute.dart';
 import 'Gender.dart';
 
@@ -30,19 +30,21 @@ class _BirthdayState extends State<Birthday> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        backgroundColor:    Color(0xFF4A5BB6),
+        elevation: 0,
+        backgroundColor:   colors.background,
       ),
+        backgroundColor: colors.background,
         body: Container(
-        decoration: BoxDecoration(
-        gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-        Color(0xFF4A5BB6),
-    Color(0xFF18246D)
-    ]
-    )
-    ),
+    //     decoration: BoxDecoration(
+    //     gradient: LinearGradient(
+    //     begin: Alignment.topLeft,
+    //     end: Alignment.bottomRight,
+    //     colors: [
+    //     Color(0xFF4A5BB6),
+    // Color(0xFF18246D)
+    // ]
+    // )
+    // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
 
@@ -80,21 +82,26 @@ class _BirthdayState extends State<Birthday> {
                ),
 
                Padding(
-                 padding: const EdgeInsets.fromLTRB(18, 70, 18, 18),
+                 padding: const EdgeInsets.fromLTRB(30, 70, 30, 10),
                  child: RaisedButton(
                    onPressed: () => _selectDate(context), // Refer step 3
                    child: Text(
                      'Select date',
                      style:
-                     TextStyle(color: Color(0xFF18246D), fontWeight: FontWeight.bold),
+                     TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
                    ),
-                   color: Colors.white,
+                   color: colors.buttonColor,
+                   elevation: 10,
+                   padding: EdgeInsets.all(18.0),
+
                  ),
                ),
 
                Padding(
-                 padding: const EdgeInsets.all(18.0),
+                 padding: const EdgeInsets.all(30.0),
                  child: RaisedButton(
+                   elevation: 10,
+                   padding: EdgeInsets.all(18.0),
                    onPressed: () {
                      Navigator.of(context).push(
                          CustomPageRoute (
@@ -108,9 +115,9 @@ class _BirthdayState extends State<Birthday> {
                    child: Text(
                      'Continue',
                      style:
-                     TextStyle(color: Color(0xFF18246D), fontWeight: FontWeight.bold),
+                     TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
                    ),
-                   color: Colors.white,
+                   color: colors.buttonColor,
                  ),
                ),
              ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/terms.dart';
-
+import 'package:rexora1/utils/colors.dart' as colors;
 import '../utils/pageroute.dart';
 import 'Gender.dart';
 
@@ -19,20 +19,21 @@ class _GiftState extends State<Gift> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Color(0xFF4A5BB6),
+        elevation: 0,
+        backgroundColor:  colors.background,
       ),
-
+backgroundColor: colors.background,
       body: Container(
-      decoration: BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-    Color(0xFF4A5BB6),
-    Color(0xFF18246D)
-    ]
-    )
-    ),
+    //   decoration: BoxDecoration(
+    // gradient: LinearGradient(
+    // begin: Alignment.topLeft,
+    // end: Alignment.bottomRight,
+    // colors: [
+    // Color(0xFF4A5BB6),
+    // Color(0xFF18246D)
+    // ]
+    // )
+    // ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,7 +97,10 @@ class _GiftState extends State<Gift> {
       ),
       Padding(
         padding: const EdgeInsets.all(18.0),
+
         child: RaisedButton(
+          elevation: 10,
+          
           onPressed: () {
             Navigator.of(context).push(
                 CustomPageRoute (
@@ -108,16 +112,16 @@ class _GiftState extends State<Gift> {
           child: Text(
             'Agree and Continue',
             style:
-            TextStyle(color: Color(0xFF18246D), fontWeight: FontWeight.bold),
+            TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
           ),
-          color: Colors.white,
+          color: colors.buttonColor,
         ),
       ),
 
     ]),)
     ],
       ),
-      )
-    );
+      ));
+
   }
 }

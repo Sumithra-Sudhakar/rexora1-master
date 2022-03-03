@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rexora1/utils/colors.dart' as colors;
 
 class Internet extends StatelessWidget {
   const Internet({Key? key}) : super(key: key);
@@ -8,17 +9,18 @@ class Internet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Container(
-        decoration: BoxDecoration(
-        gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-        Color(0xFF4A5BB6),
-    Color(0xFF18246D)
-    ]
-    )
-    ),
+      backgroundColor: colors.background,
+        body:  Container(
+    //     decoration: BoxDecoration(
+    //     gradient: LinearGradient(
+    //     begin: Alignment.topLeft,
+    //     end: Alignment.bottomRight,
+    //     colors: [
+    //     Color(0xFF4A5BB6),
+    // Color(0xFF18246D)
+    // ]
+    // )
+    // ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

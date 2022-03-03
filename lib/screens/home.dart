@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/utils/google_sign_in.dart';
@@ -8,6 +9,8 @@ import 'package:rexora1/utils/google_sign_in.dart';
 import 'package:rexora1/screens/signin.dart';
 import 'package:rexora1/screens/signup.dart';
 import 'package:provider/provider.dart';
+
+import '../utils/pageroute.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -19,11 +22,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5),
-            ()=>Navigator.pushReplacement(context,
-            MaterialPageRoute(builder:
-                (context) =>
-                SignUp()
+    Timer(Duration(seconds: 3),
+            ()=>  Navigator.of(context).push(
+                CustomPageRoute (
+                    child: SignUp()
             )
         )
     );
@@ -31,23 +33,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Stack(
-
-
-        children: [
-          Center(child: Image.network('https://monophy.com/media/Aggwhu4z4oDG66Uwgz/monophy.gif')),
-          Center(child: Text("Aye Date!", style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w200,
-            fontSize: 30,
-
-          ),),)
-
-
-
-
-        ],
-
-      ),
+      body: Stack(children: [  Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(image: new AssetImage("assets/splash.gif"), fit: BoxFit.cover,),
+        ),
+      ),]),
     );
   }
 }

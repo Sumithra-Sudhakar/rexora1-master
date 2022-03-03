@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:rexora1/screens/birthday.dart';
 import 'package:rexora1/screens/signin.dart';
-
+import 'package:rexora1/utils/colors.dart' as colors;
 import '../utils/pageroute.dart';
 import 'home.dart';
 
@@ -65,14 +65,16 @@ class _OTPState extends State<OTP> {
     _generateOTP();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF4A5BB6),
+        elevation: 0,
+        backgroundColor: colors.background,
       ),
+      backgroundColor: colors.background,
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
+        // decoration: BoxDecoration(
+            // gradient: LinearGradient(
+            //     begin: Alignment.topLeft,
+            //     end: Alignment.bottomRight,
+            //     colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,7 +117,7 @@ class _OTPState extends State<OTP> {
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(5)),
-                    fillColor: Color(0xff424894),
+                    fillColor: colors.textBoxColor,
                     //  focusColor: colors.textBoxFill,
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide.none,
@@ -144,7 +146,7 @@ class _OTPState extends State<OTP> {
                 child: Text(
                   "Continue",
                   style: GoogleFonts.montserrat(
-                      color: Color(0xff171B72), fontSize: 16),
+                      color: colors.buttonText, fontSize: 16),
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -154,9 +156,9 @@ class _OTPState extends State<OTP> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                    elevation: 2,
+                    elevation: 10,
                     padding: EdgeInsets.all(10.0),
-                    primary: Colors.white,
+                    primary: colors.buttonColor,
                     shape: new RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.0))),
               ),

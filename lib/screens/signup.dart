@@ -5,6 +5,7 @@ import 'package:rexora1/screens/no_internet.dart';
 import 'package:rexora1/screens/phone.dart';
 import 'package:rexora1/screens/signin.dart';
 import 'package:rexora1/utils/google_signup_button_widget.dart';
+import 'package:rexora1/utils/colors.dart' as colors;
 
 import '../utils/pageroute.dart';
 
@@ -19,12 +20,13 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:colors.background ,
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
+        // decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //         begin: Alignment.topLeft,
+        //         end: Alignment.bottomRight,
+        //         colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,12 +70,12 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
                         icon: Icon(
                           Icons.phone,
                           size: 24,
-                          color: Color(0xff171B72),
+                          color: colors.buttonText,
                         ),
                         label: Text(
                           "Sign Up with phone",
                           style: GoogleFonts.montserrat(
-                              color: Color(0xff171B72), fontSize: 16),
+                              color: colors.buttonText, fontSize: 16),
                         ),
                         onPressed: () {
                           Navigator.of(context).push(
@@ -83,9 +85,10 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                            elevation: 2,
+                            elevation: 10,
+
                             padding: EdgeInsets.all(10.0),
-                            primary: Colors.white,
+                            primary: colors.buttonColor,
                             shape: new RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0))),
                       ),
@@ -99,12 +102,12 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
                           icon: Icon(
                             Icons.facebook,
                             size: 24,
-                            color: Color(0xff171B72),
+                            color: colors.buttonText,
                           ),
                           label: Text(
                             "Sign Up with Facebook",
                             style: GoogleFonts.montserrat(
-                                color: Color(0xff171B72), fontSize: 16),
+                                color: colors.buttonText, fontSize: 16),
                           ),
                           onPressed: () {
 
@@ -115,17 +118,50 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                              elevation: 2,
+                              elevation: 10,
                               padding: EdgeInsets.all(10.0),
-                              primary: Colors.white,
+                              primary: colors.buttonColor,
                               shape: new RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0))),
                         ),
                       ),
                     ),
+                    // Padding(
+                    //     padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+                    //     child: GoogleSignupButtonWidget(
+                    //
+                    //     )),
+
+
                     Padding(
-                        padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-                        child: GoogleSignupButtonWidget()),
+                      padding: EdgeInsets.fromLTRB(30, 30, 30, 20),
+                      child: ElevatedButton.icon(
+                        icon: Icon(
+                          Icons.mail,
+                          size: 24,
+                          color: colors.buttonText,
+                        ),
+                        label: Text(
+                          "Sign Up with Google",
+                          style: GoogleFonts.montserrat(
+                              color: colors.buttonText, fontSize: 16),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                              CustomPageRoute (
+                                  child: Phone())
+
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                            elevation: 10,
+
+                            padding: EdgeInsets.all(10.0),
+                            primary: colors.buttonColor,
+                            shape: new RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0))),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.all(20.0),
                       child: TextButton(
