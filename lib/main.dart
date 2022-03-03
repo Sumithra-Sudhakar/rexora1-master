@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Dating App',
-        theme: ThemeData(primarySwatch: Colors.deepPurple),
+
         home: Home(),
       );
 }

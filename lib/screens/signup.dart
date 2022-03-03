@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:rexora1/screens/no_internet.dart';
 import 'package:rexora1/screens/phone.dart';
+import 'package:rexora1/screens/sign_up.dart';
 import 'package:rexora1/screens/signin.dart';
 import 'package:rexora1/utils/google_signup_button_widget.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
@@ -149,7 +150,7 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin{
                         onPressed: () {
                           Navigator.of(context).push(
                               CustomPageRoute (
-                                  child: Phone())
+                                  child: signUp())
 
                           );
                         },
