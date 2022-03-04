@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:rexora1/screens/birthday.dart';
+import 'package:rexora1/screens/sign_up.dart';
 import 'package:rexora1/screens/signin.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
 import '../utils/pageroute.dart';
@@ -63,132 +64,128 @@ class _OTPState extends State<OTP> {
   @override
   Widget build(BuildContext context) {
     _generateOTP();
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: colors.background,
-      ),
-      backgroundColor: colors.background,
+    return  Scaffold(
       body: Container(
-        // decoration: BoxDecoration(
-            // gradient: LinearGradient(
-            //     begin: Alignment.topLeft,
-            //     end: Alignment.bottomRight,
-            //     colors: [Color(0xFF4A5BB6), Color(0xFF18246D)])),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // OtpTextField(
-            //
-            //
-            //   numberOfFields: 5,
-            //
-            //   borderColor: Color(0xFF512DA8),
-            //   //set to true to show as box or false to show as dash
-            //   showFieldAsBox: true,
-            //   //runs when a code is typed in
-            //   onCodeChanged: (String code) {
-            //     //handle validation or checks here
-            //   },
-            //   //runs when every textfield is filled
-            //   onSubmit: (String verificationCode){
-            //
-            //
-            //   },
-            //
-            //   // end onSubmit
-            // ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: TextFormField(
-                  controller: _otpController,
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                  decoration: InputDecoration(
-                    label: Text(
-                      'OTP',
-                      style: GoogleFonts.raleway(
-                          color: Colors.white, fontSize: 12),
-                    ),
-                    filled: true,
-                    hintText: 'Please enter your OTP',
-                    hintStyle: GoogleFonts.poppins(
-                        color: Colors.grey.withOpacity(0.7)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(5)),
-                    fillColor: colors.textBoxColor,
-                    //  focusColor: colors.textBoxFill,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(5)),
-                  )),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const SignIn()));
-                },
-                child: Text(
-                  "Resend OTP ",
-                  style: GoogleFonts.montserrat(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: ElevatedButton(
-                child: Text(
-                  "Continue",
-                  style: GoogleFonts.montserrat(
-                      color: colors.buttonText, fontSize: 16),
-                ),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      CustomPageRoute (
-                          child: Birthday())
 
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                    elevation: 10,
-                    padding: EdgeInsets.all(10.0),
-                    primary: colors.buttonColor,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(2.0))),
+        decoration: BoxDecoration(
+        gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+        colors.gradientStart,
+        colors.gradientEnd,
+        ]
+    )
+    ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+            Expanded(child: Center(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                children: [
+                  Center(
+                    child: Text("ENTER THE CODE THAT WAS SENT TO", style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      color: colors.textColor,
+                    ),),
+                  ),
+                  Center(
+                    child: Text("1234567890", style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      color: colors.textColor,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  ),
+                ],
               ),
-            ),
-            //
-            // Padding(
-            //   padding: const EdgeInsets.all(30.0),
-            //   child: ElevatedButton(
-            //
-            //
-            //     child: Text("Generate", style: GoogleFonts.montserrat(
-            //         color: Color(0xff171B72),
-            //         fontSize: 16
-            //
-            //     ),),
-            //     onPressed: () {
-            //       print(widget.phoneNumber);
-            //       _generateOTP();
-            //     },
-            //     style: ElevatedButton.styleFrom(
-            //         elevation: 2,
-            //         padding: EdgeInsets.all( 10.0),
-            //         primary: Colors.white,
-            //         shape: new RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(2.0)
-            //         )
-            //     ),
-            //
-            //   ),
-            // ),
+            ), flex: 2,),
+            
+
+            Expanded(child: Center(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(10, 70, 10, 10),
+                children: [
+
+                Padding(
+                padding: const EdgeInsets.all(8.0),
+    child: TextFormField(
+    style: GoogleFonts.montserrat(color: Colors.white),
+    decoration: InputDecoration(
+
+    filled: true,
+    fillColor: colors.textBoxColor,
+    hintText: "OTP",
+    hintStyle: GoogleFonts.poppins(
+    color: Colors.white.withOpacity(0.7),
+    fontSize: 18
+    ),
+    focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.circular(5.0),
+
+    )
+    )),
+    ),
+    Padding(
+    padding: EdgeInsets.fromLTRB(30, 40, 30, 20),
+    child: SizedBox(
+    height: 54,
+    width: 314,
+    child: ElevatedButton.icon(
+    icon: Icon(
+    Icons.arrow_forward,
+    size: 24,
+    color: colors.buttonText,
+    ),
+    label: Text(
+    "CONTINUE",
+    style: GoogleFonts.montserrat(
+    color: colors.buttonText, fontSize: 18),
+    ),
+    onPressed: () {
+
+    Navigator.of(context).push(
+    CustomPageRoute (
+    child: Birthday())
+
+    );
+
+    },
+    style: ElevatedButton.styleFrom(
+    elevation: 10,
+
+    padding: EdgeInsets.all(10.0),
+    primary: colors.buttonColor,
+    shape: new RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(20.0))),
+    ),
+    ),
+    ),
+                  Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            CustomPageRoute (
+                                child: signUp())
+
+                        );
+                      },
+                      child: Text(
+                        "I didn't get a code",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ), flex: 4,)
           ],
         ),
       ),

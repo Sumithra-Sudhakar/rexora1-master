@@ -13,20 +13,20 @@ class _HurrayState extends State<Hurray> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colors.background,
+
       body: Container(
 
-        // decoration:
-        // BoxDecoration(
-        //     gradient: LinearGradient(
-        //         begin: Alignment.topLeft,
-        //         end: Alignment.bottomRight,
-        //         colors: [
-        //           Color(0xFF4A5BB6),
-        //           Color(0xFF18246D)
-        //         ]
-        //     )
-        // ),
+        decoration:
+        BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                 colors.gradientStart,
+                  colors.gradientEnd
+                ]
+            )
+        ),
         child: Center(
           child:  Column(
             children: [
@@ -41,7 +41,7 @@ class _HurrayState extends State<Hurray> {
                   padding: EdgeInsets.all(8.0),
               child:  Text(
                   "Welcome Lovelies!!!",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.poppins(
                     fontSize: 26,
                     color: Colors.white,
                   ),

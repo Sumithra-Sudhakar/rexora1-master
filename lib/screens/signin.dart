@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rexora1/screens/signup.dart';
+import 'package:rexora1/backups/signup.dart';
+import 'package:rexora1/screens/sign_up.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
 
 import '../utils/pageroute.dart';
@@ -173,7 +174,7 @@ class SignIn extends StatelessWidget {
                   onPressed: (){
                     Navigator.of(context).push(
                         CustomPageRoute (
-                            child: SignUp())
+                            child: signUp())
 
                     );
                   },

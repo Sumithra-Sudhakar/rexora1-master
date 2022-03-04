@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rexora1/screens/hurray.dart';
-import 'package:rexora1/screens/signup.dart';
+import 'package:rexora1/backups/signup.dart';
+import 'package:rexora1/screens/sign_up.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
  class Terms extends StatefulWidget {
    const Terms({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ import 'package:rexora1/utils/colors.dart' as colors;
              ),),
              onPressed: (){
                Navigator.push(context,
-                   MaterialPageRoute(builder: (context) => const SignUp()));
+                   MaterialPageRoute(builder: (context) => const signUp()));
              },
 
              style: ElevatedButton.styleFrom(
