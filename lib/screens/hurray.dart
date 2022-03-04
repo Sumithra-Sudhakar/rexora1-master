@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:rexora1/screens/main_page.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
+
+import '../utils/pageroute.dart';
 class Hurray extends StatefulWidget {
   const Hurray({Key? key}) : super(key: key);
 
@@ -10,6 +15,16 @@ class Hurray extends StatefulWidget {
 }
 
 class _HurrayState extends State<Hurray> {
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3),
+            ()=>  Navigator.of(context).push(
+            CustomPageRoute (
+                child: MainPage()
+            )
+        )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

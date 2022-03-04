@@ -31,8 +31,11 @@ dependencies:
     sdk: flutter
 
   google_fonts: ^2.3.1
+  material_floating_search_bar: ^0.3.6
+  auto_size_text: ^3.0.0
 
-  flutter_otp_text_field: ^1.0.0
+
+
   firebase_core: ^1.13.1
   firebase_database: ^9.0.8
   firebase_auth: ^3.3.9
