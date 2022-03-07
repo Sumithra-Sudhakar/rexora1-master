@@ -92,6 +92,9 @@ class _GenderState extends State<Gender> {
                 Padding(
                   padding: const EdgeInsets.all(28.0),
                   child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(
                           CustomPageRoute (
@@ -105,7 +108,9 @@ class _GenderState extends State<Gender> {
                     child: Text(
                       'Continue',
                       style:
-                      TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
+                      GoogleFonts.poppins(
+                          fontSize: 18,
+                          color: colors.buttonText, fontWeight: FontWeight.bold),
                     ),
                     elevation: 10,
                     padding: EdgeInsets.all(18.0),

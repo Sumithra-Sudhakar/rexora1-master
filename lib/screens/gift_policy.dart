@@ -100,7 +100,9 @@ backgroundColor: colors.background,
 
         child: RaisedButton(
           elevation: 10,
-          
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
+          ),
           onPressed: () {
             Navigator.of(context).push(
                 CustomPageRoute (
@@ -109,10 +111,15 @@ backgroundColor: colors.background,
 
 
           //Refer step 3
-          child: Text(
-            'Agree and Continue',
-            style:
-            TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              'Agree and Continue',
+              style:
+              GoogleFonts.poppins(
+                  fontSize: 18,
+                  color: colors.buttonText, fontWeight: FontWeight.bold),
+            ),
           ),
           color: colors.buttonColor,
         ),

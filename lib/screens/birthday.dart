@@ -84,11 +84,16 @@ class _BirthdayState extends State<Birthday> {
                Padding(
                  padding: const EdgeInsets.fromLTRB(30, 70, 30, 10),
                  child: RaisedButton(
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(20)
+                   ),
                    onPressed: () => _selectDate(context), // Refer step 3
                    child: Text(
                      'Select date',
                      style:
-                     TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
+                     GoogleFonts.poppins(color: colors.buttonText, fontWeight: FontWeight.bold,
+                     fontSize: 18
+                     ),
                    ),
                    color: colors.buttonColor,
                    elevation: 10,
@@ -100,6 +105,9 @@ class _BirthdayState extends State<Birthday> {
                Padding(
                  padding: const EdgeInsets.all(30.0),
                  child: RaisedButton(
+                   shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(20)
+                   ),
                    elevation: 10,
                    padding: EdgeInsets.all(18.0),
                    onPressed: () {
@@ -115,7 +123,9 @@ class _BirthdayState extends State<Birthday> {
                    child: Text(
                      'Continue',
                      style:
-                     TextStyle(color: colors.buttonText, fontWeight: FontWeight.bold),
+                     GoogleFonts.poppins(color: colors.buttonText,
+                         fontSize: 18,
+                         fontWeight: FontWeight.bold),
                    ),
                    color: colors.buttonColor,
                  ),

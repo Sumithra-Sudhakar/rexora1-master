@@ -76,7 +76,7 @@ import 'package:rexora1/utils/colors.dart' as colors;
            ElevatedButton.icon(
 
              icon: Icon(Icons.thumb_up_alt_sharp, size: 24,color: colors.buttonText,),
-             label: Text("Agree", style: GoogleFonts.montserrat(
+             label: Text("Agree", style: GoogleFonts.poppins(
                  color: colors.buttonText,
                  fontSize: 16
 
@@ -100,7 +100,7 @@ import 'package:rexora1/utils/colors.dart' as colors;
            ElevatedButton.icon(
 
              icon: Icon(Icons.thumb_down_alt_sharp, size: 24,color: colors.buttonText,),
-             label: Text("Disgree", style: GoogleFonts.montserrat(
+             label: Text("Disgree", style: GoogleFonts.poppins(
                  color: colors.buttonText,
                  fontSize: 16
 

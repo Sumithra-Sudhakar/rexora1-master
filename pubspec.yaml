@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^2.3.1
   material_floating_search_bar: ^0.3.6
   auto_size_text: ^3.0.0
+  flutter_tindercard: ^0.2.0
 
 
 
