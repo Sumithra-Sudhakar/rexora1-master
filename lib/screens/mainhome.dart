@@ -14,83 +14,104 @@ class MainHome extends StatefulWidget {
 class _MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-            flex: 1,
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Fun Interaction",
-                      style: GoogleFonts.poppins(
-                        fontSize: 28,
-                        color: colors.textColor2,
-                        fontWeight: FontWeight.w500,
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: colors.textColor,
+        leading: IconButton(
+          icon: Icon(Icons.notifications_active_rounded),
+          onPressed: () {},
+          iconSize: 24,
+          color: colors.textColor2,
+        ),
+        title: Center(
+          child: Text(
+            "Chennai, India",
+            style: GoogleFonts.poppins(
+                fontSize: 18,
+                color: colors.textColor2,
+                fontWeight: FontWeight.w300),
+          ),
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Fun Interaction",
+                        style: GoogleFonts.poppins(
+                          fontSize: 28,
+                          color: colors.textColor2,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Center(
-                  child:   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FloatingSearchAppBar(body:null,
-                      hint: "Find Partner",
-                      color: colors.textBoxColor.withOpacity(0.9),
-                      elevation: 10,
+                  Center(
+                    child:   Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FloatingSearchAppBar(body:null,
+                        hint: "Find Partner",
+                        color: colors.textBoxColor.withOpacity(0.9),
+                        elevation: 10,
 
+                      ),
                     ),
-                  ),
-                )
-              ],
-            )),
+                  )
+                ],
+              )),
 
-        Expanded(child: ListView(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding:EdgeInsets.all(10.0),
-                  child: Text("Near you", style: GoogleFonts.poppins(
-                      color: colors.textColor2,
-                      fontSize: 20
-                  ),),
-
-                ),
-                Spacer(),
-                Padding(
-                  padding:EdgeInsets.all(10.0),
-                  child: TextButton(child: Text("See All",
-                    style: GoogleFonts.poppins(
-                        color: colors.background,
-                        fontSize: 18
+          Expanded(child: ListView(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding:EdgeInsets.all(10.0),
+                    child: Text("Near you", style: GoogleFonts.poppins(
+                        color: colors.textColor2,
+                        fontSize: 20
                     ),),
-                    onPressed: (){},),
 
-                )
-              ],
-            ),
-            SingleChildScrollView(
-                child:  Stack(
-                  children: [
-                    Column(
-                      children: [
-                        MainCard(),
-                        MainCard(),
-                        MainCard()
-                      ],
-                    )
-                  ],
-                )
-            )
-          ],
-        ), flex: 3,)
-      ],
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding:EdgeInsets.all(10.0),
+                    child: TextButton(child: Text("See All",
+                      style: GoogleFonts.poppins(
+                          color: colors.background,
+                          fontSize: 18
+                      ),),
+                      onPressed: (){},),
+
+                  )
+                ],
+              ),
+              SingleChildScrollView(
+                  child:  Stack(
+                    children: [
+                      Column(
+                        children: [
+                          MainCard(),
+                          MainCard(),
+                          MainCard()
+                        ],
+                      )
+                    ],
+                  )
+              )
+            ],
+          ), flex: 3,)
+        ],
+      ),
     );
   }
 }

@@ -46,6 +46,9 @@ dependencies:
   provider: ^6.0.2
   http_parser: ^4.0.0
   lottie: ^1.2.2
+  grouped_list: ^4.2.0
+  intl: ^0.17.0
+  http: ^0.13.4
 
 
 

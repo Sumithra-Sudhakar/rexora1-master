@@ -6,6 +6,8 @@ import 'package:rexora1/screens/sign_up.dart';
 import 'package:rexora1/utils/colors.dart' as colors;
 
 import '../utils/pageroute.dart';
+import 'hurray.dart';
+import 'main_page.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -150,7 +152,17 @@ class SignIn extends StatelessWidget {
                         fontSize: 16
 
                     ),),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.of(context).push(
+                          CustomPageRoute (
+
+
+
+
+                              child: Hurray())
+
+                      );
+                    },
 
                     style: ElevatedButton.styleFrom(
                         elevation: 10,

@@ -32,25 +32,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: colors.textColor,
-        leading: IconButton(
-          icon: Icon(Icons.notifications_active_rounded),
-          onPressed: () {},
-          iconSize: 24,
-          color: colors.textColor2,
-        ),
-        title: Center(
-          child: Text(
-            "Chennai, India",
-            style: GoogleFonts.poppins(
-                fontSize: 18,
-                color: colors.textColor2,
-                fontWeight: FontWeight.w300),
-          ),
-        ),
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
 
         elevation: 10,
@@ -73,19 +55,25 @@ class _MainPageState extends State<MainPage> {
                 Icons.favorite,
                 size: 24,
               ),
-              label: "favorites"),
+              label: "favorites",
+              backgroundColor: colors.buttonColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.chat,
                 size: 24,
               ),
-              label: "messages"),
+              label: "messages",
+              backgroundColor: colors.buttonColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
                 size: 24,
               ),
-              label: "profile"),
+              label: "profile",
+              backgroundColor: colors.buttonColor
+          ),
         ],
       ),
       body:  screens[currentIndex]);

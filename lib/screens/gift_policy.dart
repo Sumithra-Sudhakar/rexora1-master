@@ -57,7 +57,7 @@ backgroundColor: colors.background,
     child: Align(
     alignment: Alignment.topLeft,
     child: Text("Are you willing to opt for physical gifts policy?",
-    style:  GoogleFonts.montserrat(color: Colors.white,
+    style:  GoogleFonts.poppins(color: Colors.white,
 
     fontSize: 20,
     fontWeight: FontWeight.w400
@@ -65,7 +65,7 @@ backgroundColor: colors.background,
     ),),
 
       ListTile(
-        title:  Text('Yes, I would love to ',style: GoogleFonts.montserrat(
+        title:  Text('Yes, I would love to ',style: GoogleFonts.poppins(
         color: Colors.white,
             fontSize: 14
         ),),
@@ -80,7 +80,7 @@ backgroundColor: colors.background,
         ),
       ),
       ListTile(
-        title:  Text('No, thanks', style: GoogleFonts.montserrat(
+        title:  Text('No, thanks', style: GoogleFonts.poppins(
           color: Colors.white,
           fontSize: 14
         ),),
