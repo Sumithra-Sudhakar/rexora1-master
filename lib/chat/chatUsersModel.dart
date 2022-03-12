@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 List<User> modelUserFromJson(String str) => List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
 
-String modelUserToJson(List<User> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+//String modelUserToJson(List<User> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
  class User{
   String text;
   String secondaryText;
@@ -18,15 +18,17 @@ String modelUserToJson(List<User> data) => json.encode(List<dynamic>.from(data.m
    return User(isseen: json['isseen'] as bool,
        text: json['text'] as String,
        secondaryText: json['secondaryText'] as String,
+
        image: json['image'] as String,
        time: json['time'] as String);
+
   }
-  Map <String, dynamic> toJson() =>{
-   "isseen": isseen,
-   "text":text,
-   "secondaryText": secondaryText,
-   "image": image,
-   "time":time,};
+  // Map <String, dynamic> toJson() =>{
+  //  "isseen": isseen,
+  //  "text":text,
+  //  "secondaryText": secondaryText,
+  //  "image": image,
+  //  "time":time,};
 
 
 
